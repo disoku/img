@@ -1,14 +1,47 @@
 <!DOCTYPE html>
+<!--<html>-->
 <html ng-app="expressly">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--bowerStyles-->
-    <!--styles-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--bowerStyles-->
+  <!--styles-->
+
 </head>
-<body>
+<body layout-xs="column">
+<div class="toolbar text-center" ng-controller="barController as barCtrl">
+  <md-fab-toolbar md-open="false" md-direction="right" >
+    <md-fab-trigger class="align-with-text">
+      <md-button aria-label="menu" class="md-fab md-primary">
+        <md-icon md-svg-src="assets/img/icons/menu.svg"></md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-toolbar>
+      <md-fab-actions class="md-toolbar-tools">
+        <md-button aria-label="label" class="md-icon-button" ng-click="barCtrl.openWindow()" >
+          <md-icon md-svg-src="assets/img/icons/ic_label_24px.svg">
+          </md-icon>
+        </md-button>
+        <md-button href="#/" aria-label="profile" class="md-icon-button">
+          <md-icon md-svg-src="assets/img/icons/ic_person_24px.svg"></md-icon>
+        </md-button>
+      </md-fab-actions>
+    </md-toolbar>
+  </md-fab-toolbar>
+</div>
+<h1>Picture viewing application</h1>
 <div class="container" ng-view></div>
 <!--scripts-->
 <!--config-->
+<div class="footer">
+  <a target="_blank" href="https://github.com/disoku/img">
+    <button class="actions">
+      <i class="github"></i> View on Github
+    </button>
+  </a>
+  <a class="signature">Dima</a>
+</div>
+<br>
+<br>
 </body>
 </html>

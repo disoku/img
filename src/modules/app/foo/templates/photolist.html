@@ -1,0 +1,148 @@
+<div class="jumbotron text-center">
+  <div class="title"> List of photos Page</div>
+
+  <div infinite-scroll='mainCtrl.loadPhotos()' infinite-scroll-distance='4' show-gt-sm hide-xs hide-sm>
+    <div class="card">
+      <table>
+        <tr ng-repeat="image in mainCtrl.images" ng-switch on="$index % 3">
+          <td ng-switch-when="0">
+            <md-card>
+              <md-card-content layout-align="space-between">
+                <div class="md-media-xl card-media">
+                  <a href="#/image/{{mainCtrl.images[$index].id}}" class="thumb">
+                    <img ng-src='{{mainCtrl.images[$index].thumbnailUrl}}'>
+                  </a>
+                </div>
+              </md-card-content>
+              <md-card-title>
+                <md-card-title-text>
+            <span class="md-headline">
+              {{mainCtrl.images[$index].title}}
+            </span>
+                </md-card-title-text>
+              </md-card-title>
+            </md-card>
+          </td>
+        <span ng-show="mainCtrl.images[$index + 1]">
+            <td ng-switch-when="0">
+              <md-card>
+                <md-card-content layout-align="space-between">
+                  <div class="md-media-xl card-media">
+                    <!--<a href="#/image/1" class="thumb">-->
+                    <a href="#/image/{{mainCtrl.images[$index + 1].id}}" class="thumb">
+                      <img ng-src='{{mainCtrl.images[$index + 1].thumbnailUrl}}'>
+                    </a>
+                  </div>
+                </md-card-content>
+                <md-card-title>
+                  <md-card-title-text>
+            <span class="md-headline">
+              {{mainCtrl.images[$index + 1].title}}
+            </span>
+                  </md-card-title-text>
+                </md-card-title>
+              </md-card>
+            </td>
+          </td>
+        </span>
+        <span ng-show="mainCtrl.images[$index + 2]">
+            <td ng-switch-when="0">
+              <md-card>
+                <md-card-content layout-align="space-between">
+                  <div class="md-media-xl card-media">
+                    <a href="#/image/{{mainCtrl.images[$index + 2].id}}" class="thumb">
+                      <img ng-src='{{mainCtrl.images[$index + 2].thumbnailUrl}}'>
+                    </a>
+                  </div>
+                </md-card-content>
+                <md-card-title>
+                  <md-card-title-text>
+            <span class="md-headline">
+              {{mainCtrl.images[$index + 2].title}}
+            </span>
+                  </md-card-title-text>
+                </md-card-title>
+              </md-card>
+            </td>
+          </td>
+        </span>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div infinite-scroll='mainCtrl.loadPhotos()' infinite-scroll-distance='4' show-sm hide-xs hide-gt-sm>
+    <div class="card">
+      <table>
+        <tr ng-repeat="image in mainCtrl.images" ng-switch on="$index % 2">
+          <td ng-switch-when="0">
+            <md-card>
+              <md-card-content layout-align="space-between">
+                <div class="md-media-xl card-media">
+                  <a href="#/image/{{mainCtrl.images[$index].id}}" class="thumb">
+                    <img ng-src='{{mainCtrl.images[$index].thumbnailUrl}}'>
+                  </a>
+                </div>
+              </md-card-content>
+              <md-card-title>
+                <md-card-title-text>
+            <span class="md-headline">
+              {{mainCtrl.images[$index].title}}
+            </span>
+                </md-card-title-text>
+              </md-card-title>
+            </md-card>
+          </td>
+        <span ng-show="mainCtrl.images[$index + 1]">
+            <td ng-switch-when="0">
+              <md-card>
+                <md-card-content layout-align="space-between">
+                  <div class="md-media-xl card-media">
+                    <!--<a href="#/image/1" class="thumb">-->
+                    <a href="#/image/{{mainCtrl.images[$index + 1].id}}" class="thumb">
+                      <img ng-src='{{mainCtrl.images[$index + 1].thumbnailUrl}}'>
+                    </a>
+                  </div>
+                </md-card-content>
+                <md-card-title>
+                  <md-card-title-text>
+            <span class="md-headline">
+              {{mainCtrl.images[$index + 1].title}}
+            </span>
+                  </md-card-title-text>
+                </md-card-title>
+              </md-card>
+            </td>
+          </td>
+        </span>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div infinite-scroll='mainCtrl.loadPhotos()' infinite-scroll-distance='4' show-xs hide-gt-xs>
+    <div class="card">
+      <table>
+        <tr ng-repeat="image in mainCtrl.images">
+          <td>
+            <md-card>
+              <md-card-content layout-align="space-between">
+                <div class="md-media-xl card-media">
+                  <a href="#/image/{{image.id}}" class="thumb">
+                    <img ng-src='{{image.thumbnailUrl}}'>
+                  </a>
+                </div>
+              </md-card-content>
+              <md-card-title>
+                <md-card-title-text>
+            <span class="md-headline">
+            {{image.title}}
+            </span>
+                </md-card-title-text>
+              </md-card-title>
+            </md-card>
+          </td>
+        </span>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
